@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="assets/announce_data.js"></script>
+    <script src="assets/script.js"></script>
+
+    <title>國立中央大學資訊管理系</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div class="nav-top-container">
+          <div class="py-2 container">
+            <div class="input-group bg-white rounded-pill shadow-sm">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="輸入關鍵字搜尋..."
+              />
+              <button class="btn" type="button" id="search-addon">
+                <img
+                  src="./assets/search.png"
+                  alt="search icon"
+                  width="18"
+                  height="18"
+                />
+              </button>
+            </div>
+            <div class="nav-top-list">
+              <ul>
+                <li><a target="_blank" href="https://im.mgt.ncu.edu.tw/about/office/aboutoffice">聯絡我們</a></li>
+                <li><a target="_blank" href="https://imcrm.mgt.ncu.edu.tw/">設備借用系統</a></li>
+                <li><a target="_blank" href="https://im.mgt.ncu.edu.tw/questionnarie">問卷調查</a></li>
+                <li><a target="_blank" href="https://im.mgt.ncu.edu.tw/file">下載專區</a></li>
+                <li><a target="_blank" href="https://im.mgt.ncu.edu.tw/english">English</a></li>
+                <li><a target="_blank" href="https://www.mgt.ncu.edu.tw/">管院首頁</a></li>
+                <li><a target="_blank" href="https://www.ncu.edu.tw/">中大首頁</a></li>
+                <li><a target="_blank" href="https://im.mgt.ncu.edu.tw/#">登入</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <nav
+          id="navbar-top"
+          class="navbar navbar-expand-lg navbar-light bg-white"
+        >
+          <div
+            class="container d-flex justify-content-between align-items-center"
+          >
+            <a href="/">
+              <img
+                src="https://im.mgt.ncu.edu.tw/img/mis_newlogo_compressor.png"
+                alt="NCU MIS Logo"
+                width="200"
+                class="d-inline-block align-text-top"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav gap-2">
+                <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 hover-bg-light"
+                    >回首頁</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#about" class="nav-link px-3 py-2 hover-bg-light"
+                    >關於本系</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#teacher" class="nav-link px-3 py-2 hover-bg-light"
+                    >師資介紹</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#not-work" class="nav-link px-3 py-2 hover-bg-light"
+                    >學術活動</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#not-work" class="nav-link px-3 py-2 hover-bg-light"
+                    >學生專區</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#not-work" class="nav-link px-3 py-2 hover-bg-light"
+                    >校友專區</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#not-work" class="nav-link px-3 py-2 hover-bg-light"
+                    >教師專區</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-fluid p-0">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators"></div>
+          <div class="carousel-inner"></div>
+          <a
+            class="carousel-control-prev"
+            href="#mainCarousel"
+            role="button"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#mainCarousel"
+            role="button"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <div
+        id="announcement"
+        class="container my-4 p-4 bg-light rounded shadow-sm d-flex flex-column align-items-center"
+        style="max-width: 1000px; margin: 0 auto"
+      >
+        <h2 class="text-center">公告訊息</h2>
+        <div class="nav">
+          <ul
+            class="nav nav-tabs flex-wrap"
+            id="announcementTab"
+            role="tablist"
+          >
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="news-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#news"
+                type="button"
+                role="tab"
+                aria-controls="news"
+                aria-selected="true"
+              >
+                最新消息
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="admission-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#admission"
+                type="button"
+                role="tab"
+                aria-controls="admission"
+                aria-selected="false"
+              >
+                招生訊息
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="honor-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#honor"
+                type="button"
+                role="tab"
+                aria-controls="honor"
+                aria-selected="false"
+              >
+                榮譽榜
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="course-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#course"
+                type="button"
+                role="tab"
+                aria-controls="course"
+                aria-selected="false"
+              >
+                課程消息
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="job-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#job"
+                type="button"
+                role="tab"
+                aria-controls="job"
+                aria-selected="false"
+              >
+                工讀與獎學金
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="mentor-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#mentor"
+                type="button"
+                role="tab"
+                aria-controls="mentor"
+                aria-selected="false"
+              >
+                企業導師
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="lecture-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#lecture"
+                type="button"
+                role="tab"
+                aria-controls="lecture"
+                aria-selected="false"
+              >
+                演講訊息
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="internship-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#internship"
+                type="button"
+                role="tab"
+                aria-controls="internship"
+                aria-selected="false"
+              >
+                實習與企業徵才
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="other-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#other"
+                type="button"
+                role="tab"
+                aria-controls="other"
+                aria-selected="false"
+              >
+                其他活動
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content w-100" id="announcementTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="news"
+            role="tabpanel"
+            aria-labelledby="news-tab"
+          >
+            <table class="table mt-3">
+              <thead class="sticky-top">
+                <tr>
+                  <th width="20%">類別</th>
+                  <th width="55%">標題</th>
+                  <th width="10%">附件</th>
+                  <th width="15%">日期</th>
+                </tr>
+              </thead>
+              <tbody
+                class="table-group-divider"
+                id="data-content"
+                style="font-size: 14px"
+              ></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-5">
+        <h2 class="text-center mb-4">近期活動</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Activity 1 -->
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://im.mgt.ncu.edu.tw/img/activity/49/IMG_2310.jpg"
+                class="card-img-top"
+                alt="Activity 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">108大學部-管理學院院週會</h5>
+                <p class="card-text">
+                  講者：李漢威先生(關鍵評論網媒體集團製作人)
+                  <br />
+                  主題：傳統媒題與新媒題的差別
+                  <br />
+                  日期：108年12月24日
+                  <br />
+                  時間：上午10:00-12:00
+                  <br />
+                  地點：校史館大講堂
+                  <br />
+                  主辦單位：資訊管理學系
+                  <br />
+                  協辦單位：管理學院
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <small class="text-muted">活動日期：2019/12/24</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 2 -->
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://im.mgt.ncu.edu.tw/img/activity/48/IMG_1929.JPG"
+                class="card-img-top"
+                alt="Activity 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">108大學部-資管嘉年華專題成果展</h5>
+                <p class="card-text">
+                  活動日期：2019/12/7 <br />
+                  活動地點：管二館廣場
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <small class="text-muted">活動日期：2019/12/7</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 3 -->
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://im.mgt.ncu.edu.tw/img/activity/46/IMG_0000.JPG"
+                class="card-img-top"
+                alt="Activity 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">108其他-第九屆資管系企業導師啟業典禮</h5>
+                <p class="card-text">
+                  舉辦時間：10/23(三) 18:30 <br />
+                  活動地點：管二館 I1-114 <br />
+                  並於啟業儀式後轉至男研社iicafe餐敘
+                </p>
+              </div>
+              <div class="card-footer text-center">
+                <small class="text-muted">活動日期：2019/10/23</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4 activity-btn">
+          <a target="_blank" href="https://im.mgt.ncu.edu.tw/activity" class="btn btn-primary rounded-pill shadow-sm"
+            >更多活動</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <div id="content"></div>
+
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <p>
+          本網站使用Cookie和類似技術，以確保我們的網站正常運行並為您提供更好的網站體驗。在您的同意下，我們將使用Cookie來分析和改進頁面的使用，並提供個人化服務及進行廣告與流量分析等。點擊「同意」或繼續使用網站，即表示您同意放置所有的Cookie。若您不願接受Cookie的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Cookie的寫入，但可能會導至網站某些功能無法正常執行。
+        </p>
+      </div>
+      <button class="accept-cookies">
+        我同意 <i class="fa fa-angle-right"></i>
+      </button>
+    </div>
+
+    <div id="toTop" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+    <footer class="footer py-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="footer-brand">中央大學資訊管理系</div>
+            <p class="footer-text">
+              地址：桃園市中壢區中大路300號 管理二館213室
+            </p>
+            <p class="footer-text">
+              系辦電話：(03)422-7151 分機 66500, 66501, 66536, 66559
+              傳真：03-425-4604
+            </p>
+            <p class="footer-text">公務信箱: ncu6500@ncu.edu.tw</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/NCUMISclub/" class="social-link"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/ncu_mis/?hl=zh-tw" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-md-end">
+            <ul class="footer-links">
+              <li>
+                <a href="https://www.facebook.com/NCUMISclub/">系學會粉絲頁</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ncuimalumni/">系友會粉絲頁</a>
+              </li>
+              <li>
+                <a href="http://deptmember.im.mgt.ncu.edu.tw/01/main.php"
+                  >系友專區
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright text-center">
+          Copyright © 2018 |
+          <a href="https://im.mgt.ncu.edu.tw/"
+            >資訊管理學系 Department of Information Management</a
+          >
+          Designed And Developed By: JACK
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<style>
+  body {
+    font-family: "Open Sans", "Noto Sans TC", "Times New Roman", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #321300;
+    background: #f4eee0;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    color: #321300;
+  }
+
+  .navbar {
+    z-index: 1050;
+    width: 100%;
+  }
+
+  .sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .input-group {
+    width: 30%;
+    max-width: 200px;
+    height: 35px;
+  }
+
+  .form-control {
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    padding: 2px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* .btn:hover {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+  } */
+
+  .navbar-collapse-center {
+    text-align: center;
+  }
+
+  .nav-tabs li button {
+    color: #321300;
+  }
+
+  .nav-tabs li button:hover {
+    background-color: #f0f0f0;
+    color: #321300;
+  }
+
+  .nav-tabs li .active {
+    color: #321300;
+    font-weight: 800;
+  }
+
+  thead.sticky-top {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.629); /* Adjust thickness and color as needed */
+  }
+
+  @media (max-width: 991px) {
+    .nav-item {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+</style>
